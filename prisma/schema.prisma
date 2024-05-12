@@ -14,9 +14,13 @@ datasource db {
 }
 
 model Post {
-  id        String     @id @default(uuid())
+  id        String   @id @default(uuid())
   title     String
-  content   String?
-  published Boolean? @default(false)
-  authorId  Int?
+  content   String
+  status    String
+  author    String
+  address   String
+  contact   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
